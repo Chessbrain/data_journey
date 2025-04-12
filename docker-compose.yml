@@ -1,0 +1,11 @@
+services:
+  postgres:
+    container_name: dba_stackexchange
+    image: chesskhaled/dba_stackexchange_img:latest
+    ports:
+      - 5433:5432
+    healthcheck:
+      test: pg_isready -U postgres -d postgres
+      interval: 10s
+      timeout: 3s
+      retries: 3
