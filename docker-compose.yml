@@ -2,6 +2,7 @@ services:
   postgres:
     container_name: dba_stackexchange
     image: chesskhaled/dba_stackexchange_img:latest
+    platform: linux/x86_64
     ports:
       - 5433:5432
     healthcheck:
